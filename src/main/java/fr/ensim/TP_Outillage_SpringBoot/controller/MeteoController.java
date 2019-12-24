@@ -22,13 +22,15 @@ public class MeteoController {
 		
 		//Secret Key DarkSky
 		String Key ="e8261859bb5f610954076bc11e526602";
-		SimpleClientHttpRequestFactory clientHttpReq = new SimpleClientHttpRequestFactory();
+		
+		/*SimpleClientHttpRequestFactory clientHttpReq = new SimpleClientHttpRequestFactory();
 		Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.univ-lemans.fr", 3128));
 		clientHttpReq.setProxy(proxy);
-		RestTemplate restTemplate = new RestTemplate(clientHttpReq);
+		RestTemplate restTemplate = new RestTemplate(clientHttpReq);*/
+	RestTemplate restTemplate = new RestTemplate();
 		
 		
-		Response responseGouv = restTemplate.getForObject("https://api-adresse.data.gouv.fr/search/?q=16+BOULEVARD+CHARLES+NICOLLE", Response.class);
+		Response responseGouv = restTemplate.getForObject("https://api-adresse.data.gouv.fr/search/?q="+addresse, Response.class);
 		
 		double longitude = responseGouv.getFeatures().get(0).getGeometry().getCoordinates().get(0);
 		double latitude = responseGouv.getFeatures().get(0).getGeometry().getCoordinates().get(1);
@@ -41,6 +43,9 @@ public class MeteoController {
 		
 		
 		model.addAttribute("adresse", responseGouv.getType());
+		
+		//On teste la recuperation de la variable
+		//model.addAttribute("adresse", addresse);
 		return "meteo";
 	}
 }

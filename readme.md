@@ -1,3 +1,12 @@
+Erreur: 
+
+		l'erreur se situe au niveau de la classe MeteoController, 
+		je n'arrive pas à récuperer les informations de l'api gouv, 
+		j'ai crée l'objet "Reponse" qui permet de récupérer les informations de l'api. 
+		voici l'erreur affichée en image ci dessus.
+		
+		
+
 Web
 
 	Permet de communiquer facilement avec des apis web

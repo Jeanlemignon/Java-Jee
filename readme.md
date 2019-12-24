@@ -5,7 +5,11 @@ Erreur:
 		j'ai crée l'objet "Reponse" qui permet de récupérer les informations de l'api. 
 		voici l'erreur affichée en image ci dessus.
 		
+![alt text](https://github.com/Jeanlemignon/Java-Jee/blob/master/erreur.png)
+
+Lien github:
 		
+		 https://github.com/Jeanlemignon/Java-Jee		
 
 Web
 
